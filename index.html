@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <!-- First, include the Highcharts files -->
+  <script src="./code/highcharts.js"></script>
+  <script src="./code/modules/data.js"></script>
+  <script src="./code/modules/drilldown.js"></script>
+  <script src="./code/modules/networkgraph.js"></script>
+  <script src="./code/themes/brand-light.js"></script>
+  <script src="./code/modules/exporting.js"></script>
+  <script src="./code/modules/export-data.js"></script>
+  <script src="./code/modules/accessibility.js"></script>
+  <script src="./code/highcharts-more.js"></script>
+  <script src="./code/modules/dumbbell.js"></script>
+  <script src="./code/modules/lollipop.js"></script>
+  <script src="./code/modules/item-series.js"></script>
+  <script src="./code/modules/treemap.js"></script>
+  <script src="/code/modules/treegraph.js"></script>
+  <script src="/code/highcharts-3d.js"></script>
+  <script src="/code/modules/stock.js"></script>
+  <script src="/code/modules/gantt.js"></script>
+  <script src="/code/modules/parallel-coordinates.js"></script>
+  <script src="/code/modules/annotations-advanced.js"></script>
+  <script src="/code/modules/data.js"></script>
+  <script src="/code/modules/draggable-points.js"></script>
+  <script src="/code/modules/static-scale.js"></script>
+  <script src="/code/modules/broken-axis.js"></script>
+  <script src="/code/modules/heatmap.js"></script>
+  <script src="/code/modules/tilemap.js"></script>
+  <script src="/code/modules/timeline.js"></script>
+  <script src="/code/modules/histogram-bellcurve.js"></script>
+  <script src="/code/modules/bullet.js"></script>
+  <script src="/code/modules/funnel.js"></script>
+  <script src="/code/modules/funnel3d.js"></script>
+  <script src="/code/modules/pyramid3d.js"></script>
+  <script src="/code/modules/pareto.js"></script>
+  <script src="/code/modules/pattern-fill.js"></script>
+  <script src="/code/modules/price-indicator.js"></script>
+  <script src="/code/modules/sankey.js"></script>
+  <script src="/code/modules/arc-diagram.js"></script>
+  <script src="/code/modules/dependency-wheel.js"></script>
+  <script src="/code/modules/series-label.js"></script>
+  <script src="/code/modules/solid-gauge.js"></script>
+  <script src="/code/modules/stock-tools.js"></script>
+  <script src="/code/modules/streamgraph.js"></script>
+  <script src="/code/modules/sunburst.js"></script>
+  <script src="/code/modules/variable-pie.js"></script>
+  <script src="/code/modules/variwide.js"></script>
+  <script src="/code/modules/vector.js"></script>
+  <script src="/code/modules/venn.js"></script>
+  <script src="/code/modules/windbarb.js"></script>
+  <script src="/code/modules/wordcloud.js"></script>
+  <script src="/code/modules/xrange.js"></script>
+  <script src="/code/modules/no-data-to-display.js"></script>
+  <script src="/code/modules/drag-panes.js"></script>
+  <script src="/code/modules/debugger.js"></script>
+  <script src="/code/modules/dumbbell.js"></script>
+  <script src="/code/modules/lollipop.js"></script>
+  <script src="/code/modules/cylinder.js"></script>
+  <script src="/code/modules/organization.js"></script>
+  <script src="/code/modules/dotplot.js"></script>
+  <script src="/code/modules/marker-clusters.js"></script>
+  <script src="/code/modules/hollowcandlestick.js"></script>
+  <script src="/code/modules/heikinashi.js"></script>
+
+  <!-- Next, include the Highmaps files -->
+  <script src="./maps/code/modules/map.js"></script>
+  <script src="./maps/code/modules/offline-exporting.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/gh/lafeber/world-flags-sprite/stylesheets/flags32-both.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.9.0/proj4.js"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script src="https://d3js.org/d3-random.v2.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
+  <script src="https://marketing-demo.s3-eu-west-1.amazonaws.com/densityFunction/processDensity.js"></script>
+  <script src="https://marketing-demo.s3-eu-west-1.amazonaws.com/violinFunction/processViolin.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {
+      'packages': ['treemap', 'table']
+    });</script>
+
+</head>
+<style type="text/css">
+  .highcharts-data-table table {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: small;
+    border-collapse: collapse;
+    border: 1px solid #ebebeb;
+    margin: 1em auto;
+
+  }
+
+  .highcharts-data-table caption {
+    font-size: 0.8em;
+    color: #555;
+    padding: 1em 0;
+  }
+
+  .highcharts-data-table th {
+    font-weight: 500;
+    padding: 0.5em;
+    text-align: center;
+    background-color: #e2e2e2;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .highcharts-data-table td,
+  .highcharts-data-table th {
+    padding: 0.5em;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .highcharts-data-table tr:nth-child(even) {
+    background-color: #f8f8f8;
+  }
+
+  .highcharts-data-table tr:hover {
+    background-color: #add0ff;
+  }
+</style>
+
+
+<body>
+
+  <div id="sidebar">
+    <div id="toggle-btn" title="Collapse">
+      <svg id="chevron" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        width="32" height="32">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+    </div>
+    <div id="sidebar-content">
+      <div class="category">
+        <div class="category-header">
+          <i class="fas fa-plus"></i> Employee Analysis
+        </div>
+        <div class="subcategories">
+          <a class="subcategory-link" href="#" data-js-path="charts/compare_emp_dept/compare_emp_dept.js">Headcount by
+            Department</a>
+          <a class="subcategory-link" href="#" data-js-path="charts/compare_emp_bu/compare_emp_bu.js">Headcount by
+            Business Units</a>
+          <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_emp_country/compare_emp_country.js">Headcount by Countries</a>
+                    <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_gender_country/compare_gender_country.js">Gender Diversity</a>
+          <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_hires_leavers/compare_hires_leavers.js">Hires, Leavers, Rehires</a>
+          <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_payroll_status/compare_payroll_status.js">Payroll Status for employees</a>
+          <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_designations/compare_designations.js">Compare Employee Designations</a>
+                </div>
+      </div>
+      <div class="category">
+        <div class="category-header">
+          <i class="fas fa-plus"></i> Payroll Analysis
+        </div>
+        <div class="subcategories">
+          <a class="subcategory-link" href="#"
+                      data-js-path="charts/compare_gross_net_ded_dept/compare_gross_net_ded_dept.js">Spending across
+            departments</a>
+          <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_gross_net_ded_bu/compare_gross_net_ded_bu.js">Spending across Business
+            Units</a>
+          <a class="subcategory-link" href="#"
+            data-js-path="charts/compare_gross_net_ded_country/compare_gross_net_ded_country.js">Spending across
+            Countries</a>
+                   <a class="subcategory-link" href="#" data-js-path="charts/compare_paygrades/compare_paygrades.js">Compare
+            Paygrades</a>
+        </div>
+      </div>
+
+    </div>
+    <p id="collapsed-content">View categories</p>
+  </div>
+
+  <div id="main-content">
+    <p id="page-title"></p>
+    <div id="chart-window"></div>
+    <div id="feedback-flap">
+      <span id="feedback-flap-text">Add Feedback</span>
+    </div>
+  </div>
+  <div class="gearbox" id="gearbox">
+    <button id="gearbox-button">
+      <i class="fas fa-cog"></i>
+    </button>
+    <div class="gearbox-content">
+      <a href="#">Admin Page</a>
+      <a href="#">R&D Portal</a>
+    </div>
+  </div>
+
+
+  <div class="card" id="card">
+    <div class="heading">
+      <h1>Feedback</h1>
+      <p>Could you rate the significance of these charts in contributing to our analysis?</p>
+      <ul class="icon">
+        <li><i class="far fa-star fa-lg"></i></li>
+        <li><i class="far fa-star fa-lg"></i></li>
+        <li><i class="far fa-star fa-lg"></i></li>
+        <li><i class="far fa-star fa-lg"></i></li>
+        <li><i class="far fa-star fa-lg"></i></li>
+      </ul>
+      <input type="hidden" id="hidden-rating-field">
+    </div>
+
+
+    <div class="textarea">
+      <textarea id="feedback-textarea" placeholder="Please enter your feedback here..."></textarea>
+      <label for="feedback-textarea">Please leave your name along with the feedback to facilitate follow-up.</label>
+    </div>
+    <div class="button">
+      <button id="feedback-send-btn">Send</button>
+      <button class="cancel-btn">Cancel</button>
+    </div>
+
+    <button class="close">
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+
+
+  <script type="module" src="script.js"></script>
+
+</body>
+
+</html>
